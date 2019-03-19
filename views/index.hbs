@@ -1,0 +1,18 @@
+<h1> {{ title }}</h1>
+<p> Welcome to {{ title }}</p>
+{{# if condition}}
+    condition met
+{{ else }}
+    condition not met
+{{/if}}
+
+{{# each someArray as |val key|}}
+    {{key }} - {{val}}
+{{/each}}
+<div class="special">
+    new line
+</div>
+
+{{# each someArray }}
+    {{this}}
+{{/each}}
