@@ -9,10 +9,14 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-console.log(__dirname +'/views/')
+let handleBarsConfig = {extname: 'hbs',
+                        defaultLayout:'layout',
+                        layoutsDir: __dirname + '/views/layouts',
+                        partialsDir: __dirname + '/views/partials'}
+
 // handlebars view engine setup - file extensions end with hbs and default layout will be the layout file - layout.hbs
-app.engine('hbs', handlebars({extname: 'hbs', defaultLayout:'layout',layoutsDir:__dirname +'/views/layouts'}));
-// app.set('views', path.join(__dirname, 'views'));
+app.engine('hbs', handlebars(handleBarsConfig));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));

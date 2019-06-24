@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', condition: false, someArray: [1,2,3]});
+  res.render('index', { tabName: "Rago's World", condition: false, someArray: [1,2,3]});
 });
 
 module.exports = router;

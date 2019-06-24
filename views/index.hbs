@@ -1,5 +1,4 @@
-<h1> {{ title }}</h1>
-<p> Welcome to {{ title }}</p>
+{{!-- <p> Welcome to {{ title }}</p>
 {{# if condition}}
     condition met
 {{ else }}
@@ -15,27 +14,28 @@
 
 {{# each someArray }}
     {{this}}
-{{/each}}
+{{/each}} --}}
 
 
 <div id="wrapper">
     <div class="section">
-        Some test
+        {{> bio}}
     </div>
-    <div class="section">
-        Some more
+    <div class="section stuffBackground">
+        {{> stuff}}
     </div>
-<div class="section">
-        Some MORERE yesss
-    </div>
-
-
+    
 </div>
+
 <script>
     $(document).ready(function(){
         $('#wrapper').fullpage({
             autoScrolling:true,
-		    scrollHorizontally: true});
+		    scrollHorizontally: true,
+            navigation: true,
+            navigationPosition: 'right',
+            showActiveTooltip: true,
+            navigationTooltips: ['Bio','Cool Stuff Coming']});
 
             
     });
